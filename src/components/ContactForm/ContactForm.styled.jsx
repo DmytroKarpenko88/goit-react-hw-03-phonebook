@@ -14,28 +14,41 @@ export const Label = styled.label`
 `;
 
 export const Input = styled.input`
-  width: 200px;
-  padding: 8px;
-  border: 1px solid black;
-  border-radius: 1px;
+  padding: 5px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #555;
+  outline: none;
 
   &:focus-within {
-    border: 1px solid #2b2bf6;
-    filter: drop-shadow(0px 4px 4px #2b2bf6);
-    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
   }
 `;
 
 export const Button = styled.button`
-  width: 150px;
-  padding: 4px 12px;
-  background-color: #ffffff;
-  border: 1px solid #959595;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  cursor: pointer;
+  max-width: 150px;
+  height: 30px;
+  background-image: linear-gradient(to top, #d8d9db 0%, #fff 80%, #fdfdfd 100%);
+  border-radius: 30px;
+  border: 1px solid #8f9092;
+  transition: all 0.2s ease;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #606060;
+  text-shadow: 0 1px #fff;
 
-  border-radius: 4px;
-
-  &&:active {
-    background-color: #2b2bf6;
-    color: #ffffff;
+  &:hover,
+  &:active,
+  &:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
   }
 `;

@@ -20,7 +20,23 @@ class App extends Component {
       { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
     ],
     filter: '',
+    isActive: false,
   };
+
+  componentDidMount() {
+    const savedContacts = localStorage.getItem('contacts');
+    if (savedContacts !== null) {
+      this.setState({ contacts: JSON.parse(savedContacts) });
+    } else {
+      this.setState({ contacts: this.state.contacts });
+    }
+  }
+
+  componentDidUpdate(prevState) {
+    if (prevState.contacts !== this.state.contacts) {
+      localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
+    }
+  }
 
   addUser = ({ name, number }) => {
     const user = {
@@ -62,6 +78,10 @@ class App extends Component {
     }));
   };
 
+  onStatusChange = () => {
+    this.setState({ isActive: !this.state.isActive });
+  };
+
   render() {
     return (
       <>
@@ -74,10 +94,15 @@ class App extends Component {
         <Container>
           <h2>Contacts</h2>
 
-          <Filter onChange={this.onInputChange} value={this.state.filter} />
+          <Filter
+            onChange={this.onInputChange}
+            value={this.state.filter}
+            onClick={this.onStatusChange}
+          />
           <ContactList
             visibleList={this.getVisibleItems()}
             onDeleteUser={this.handleDelete}
+            isActive={this.isActive}
           />
         </Container>
       </>

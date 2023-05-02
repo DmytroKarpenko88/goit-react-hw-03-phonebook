@@ -1,12 +1,30 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Label, Input } from './Filter.styled';
+import { Label, Input, Button } from './Filter.styled';
 
-const Filter = ({ onChange, value }) => {
+import { FcSearch, FcLock, FcUnlock } from 'react-icons/fc';
+
+const Filter = ({ onChange, value, onClick }) => {
   return (
     <>
-      <Label>Find contac by name </Label>
-      <Input type="text" name="filter" value={value} onChange={onChange} />
+      <Label>
+        <p>Find contac by name</p>
+        <div style={{ position: 'relative' }}>
+          <FcSearch
+            style={{
+              position: 'absolute',
+              top: '50%',
+              transform: 'translateY(-50%)',
+              left: 10,
+              zIndex: 2,
+            }}
+          />
+          <Input type="text" name="filter" value={value} onChange={onChange} />
+          <Button type="button" onClick={onClick}>
+            <FcUnlock />
+          </Button>
+        </div>
+      </Label>
     </>
   );
 };

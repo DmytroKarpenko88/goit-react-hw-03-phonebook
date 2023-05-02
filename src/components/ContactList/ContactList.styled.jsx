@@ -15,15 +15,17 @@ export const Text = styled.span``;
 
 export const Button = styled.button`
   margin-left: auto;
-  width: 100px;
+  max-width: 100px;
   padding: 4px 12px;
   background-color: #ffffff;
   border: 1px solid #959595;
 
   border-radius: 4px;
 
-  &&:active {
-    background-color: #2b2bf6;
-    color: #ffffff;
+  &:hover,
+  &:active,
+  &:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
   }
 `;

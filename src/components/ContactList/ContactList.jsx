@@ -2,7 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Button, List, ListItem, Text } from './ContactList.styled';
 
-const ContactList = ({ visibleList, onDeleteUser }) => {
+import { TiUserDelete } from 'react-icons/ti';
+
+const ContactList = ({ visibleList, onDeleteUser, isActive = true }) => {
   return (
     <List>
       {visibleList.map(({ id, name, number }) => {
@@ -11,8 +13,12 @@ const ContactList = ({ visibleList, onDeleteUser }) => {
             <div>
               <Text>{name}</Text> <Text>{number}</Text>
             </div>
-            <Button type="button" onClick={() => onDeleteUser(id)}>
-              Delete
+            <Button
+              type="button"
+              disabled={isActive}
+              onClick={() => onDeleteUser(id)}
+            >
+              <TiUserDelete />
             </Button>
           </ListItem>
         );

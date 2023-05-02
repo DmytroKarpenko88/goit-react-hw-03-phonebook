@@ -1,19 +1,45 @@
 import styled from '@emotion/styled';
 
 export const Label = styled.label`
-  display: block;
-  margin: 10px 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 15px;
 `;
 
 export const Input = styled.input`
-  width: 200px;
-  padding: 8px;
-  border: 1px solid black;
-  border-radius: 1px;
+  padding: 5px;
+  padding-left: 30px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #555;
+  outline: none;
 
   &:focus-within {
-    border: 1px solid #2b2bf6;
-    filter: drop-shadow(0px 4px 4px #2b2bf6);
-    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  }
+`;
+
+export const Button = styled.button`
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
+  margin-left: auto;
+  max-width: 100px;
+  padding: 4px 12px;
+  background-color: #ffffff;
+  border: 1px solid #959595;
+
+  border-radius: 4px;
+
+  &:hover,
+  &:active,
+  &:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
   }
 `;
