@@ -46,9 +46,19 @@ export const Button = styled.button`
   text-shadow: 0 1px #fff;
 
   &:hover,
-  &:active,
   &:focus {
     border-color: #007bff;
     box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  }
+
+  &:active {
+    background-image: linear-gradient(
+      to top,
+      #007bff 0%,
+      #268efd 80%,
+      #65b0ff 100%
+    );
+    background-color: #007bff;
+    color: black;
   }
 `;
