@@ -4,7 +4,7 @@ import { Button, List, ListItem, Text } from './ContactList.styled';
 
 import { TiUserDelete } from 'react-icons/ti';
 
-const ContactList = ({ visibleList, onDeleteUser, isActive = true }) => {
+const ContactList = ({ visibleList, onDeleteUser, isActive }) => {
   return (
     <List>
       {visibleList.map(({ id, name, number }) => {

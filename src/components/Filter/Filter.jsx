@@ -4,7 +4,7 @@ import { Label, Input, Button } from './Filter.styled';
 
 import { FcSearch, FcLock, FcUnlock } from 'react-icons/fc';
 
-const Filter = ({ onChange, value, onClick }) => {
+const Filter = ({ onChange, value, onClick, isActive }) => {
   return (
     <>
       <Label>
@@ -21,7 +21,7 @@ const Filter = ({ onChange, value, onClick }) => {
           />
           <Input type="text" name="filter" value={value} onChange={onChange} />
           <Button type="button" onClick={onClick}>
-            <FcUnlock />
+            {isActive ? <FcLock /> : <FcUnlock />}
           </Button>
         </div>
       </Label>

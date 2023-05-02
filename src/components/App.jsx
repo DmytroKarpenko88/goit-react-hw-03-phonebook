@@ -20,7 +20,7 @@ class App extends Component {
       { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
     ],
     filter: '',
-    isActive: false,
+    isActive: true,
   };
 
   componentDidMount() {
@@ -97,12 +97,13 @@ class App extends Component {
           <Filter
             onChange={this.onInputChange}
             value={this.state.filter}
+            isActive={this.state.isActive}
             onClick={this.onStatusChange}
           />
           <ContactList
             visibleList={this.getVisibleItems()}
             onDeleteUser={this.handleDelete}
-            isActive={this.isActive}
+            isActive={this.state.isActive}
           />
         </Container>
       </>
